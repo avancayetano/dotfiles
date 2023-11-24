@@ -1,0 +1,50 @@
+{
+  "name": "custom-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./solid-js-snippets/JSX.jsx.tsx.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./solid-js-snippets/JSX.jsx.tsx.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./solid-js-snippets/component.jsx.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./solid-js-snippets/component.tsx.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./solid-js-snippets/context.jsx.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./solid-js-snippets/context.tsx.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./solid-js-snippets/reactivity.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./solid-js-snippets/reactivity.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./solid-js-snippets/reactivity.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./solid-js-snippets/reactivity.json"
+      }
+    ]
+  }
+}
