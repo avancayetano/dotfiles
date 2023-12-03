@@ -31,13 +31,11 @@ return {
             hint = icons.diagnostics.Hint,
           },
         },
-        { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-        { Util.lualine.pretty_path() },
       },
       lualine_x = {
         {
           function()
-            return " " .. require("dap").status()
+            return "  " .. require("dap").status()
           end,
           cond = function()
             return package.loaded["dap"] and require("dap").status() ~= ""
@@ -80,7 +78,7 @@ return {
       },
       lualine_z = {
         function()
-          return " " .. os.date("%I:%M %p")
+          return "  " .. os.date("%I:%M %p")
         end,
       },
     }
@@ -98,44 +96,6 @@ return {
           color = { bg = "#fe8019" },
         },
       },
-    }
-    opts.winbar = {
-      lualine_a = {
-        {
-          "filename",
-          draw_empty = true,
-          color = { fg = "#ebdbb2", bg = "#1d2021" },
-        },
-        {
-          function()
-            return require("nvim-navic").get_location()
-          end,
-          cond = function()
-            return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-          end,
-          draw_empty = true,
-          color = { bg = "#1d2021" },
-        },
-      },
-      lualine_b = {},
-      lualine_c = {},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {},
-    }
-    opts.inactive_winbar = {
-      lualine_a = {
-        {
-          "filename",
-          draw_empty = true,
-          color = { fg = "#ebdbb2", bg = "#1d2021" },
-        },
-      },
-      lualine_b = {},
-      lualine_c = {},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {},
     }
   end,
 }

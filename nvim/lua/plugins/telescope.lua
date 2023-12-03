@@ -3,20 +3,18 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
-    version = false, -- telescope did only one release, so use HEAD for now
+    version = false,
     dependencies = {
-      -- {
-      --   "nvim-telescope/telescope-fzf-native.nvim",
-      --   build = "path\\to\\make.exe",
-      --   enabled = vim.fn.executable(
-      --     "path\\to\\make.exe"
-      --   ) == 1,
-      --   config = function()
-      --     Util.on_load("telescope.nvim", function()
-      --       require("telescope").load_extension("fzf")
-      --     end)
-      --   end,
-      -- },
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "<PATH>\\<TO>\\mingw64\\mingw64\\bin\\mingw32-make.exe", -- NOTE: edit this path
+        enabled = vim.fn.executable("<PATH>\\<TO>\\mingw64\\mingw64\\bin\\mingw32-make.exe") == 1,
+        config = function()
+          Util.on_load("telescope.nvim", function()
+            require("telescope").load_extension("fzf")
+          end)
+        end,
+      },
     },
     keys = {
       {

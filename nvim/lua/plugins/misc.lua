@@ -2,7 +2,11 @@
 return {
   {
     "j-hui/fidget.nvim",
-    opts = {},
+    opts = {
+      progress = {
+        ignore_empty_message = false,
+      },
+    },
   },
   {
     "echasnovski/mini.indentscope",
@@ -40,23 +44,53 @@ return {
     end,
   },
   {
-    "cameron-wags/rainbow_csv.nvim",
-    config = true,
-    ft = {
-      "csv",
-      "tsv",
-      "csv_semicolon",
-      "csv_whitespace",
-      "csv_pipe",
-      "rfc_csv",
-      "rfc_semicolon",
+    "HiPhish/rainbow-delimiters.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      local rainbow = require("rainbow-delimiters")
+      local colors = require("gruvbox").palette
+
+      vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { fg = colors.bright_red })
+      vim.api.nvim_set_hl(0, "RainbowDelimiterYellow", { fg = colors.bright_yellow })
+      vim.api.nvim_set_hl(0, "RainbowDelimiterBlue", { fg = colors.neutral_blue })
+      vim.api.nvim_set_hl(0, "RainbowDelimiterOrange", { fg = colors.bright_orange })
+      vim.api.nvim_set_hl(0, "RainbowDelimiterGreen", { fg = colors.neutral_green })
+      vim.api.nvim_set_hl(0, "RainbowDelimiterViolet", { fg = colors.neutral_purple })
+      vim.api.nvim_set_hl(0, "RainbowDelimiterCyan", { fg = colors.bright_aqua })
+
+      vim.g.rainbow_delimiters = {
+        strategy = {
+          [""] = rainbow.strategy["global"],
+          html = rainbow.strategy["local"],
+        },
+        query = {
+          [""] = "rainbow-delimiters",
+        },
+        highlight = {
+          "RainbowDelimiterOrange",
+          "RainbowDelimiterYellow",
+          "RainbowDelimiterRed",
+          "RainbowDelimiterBlue",
+          "RainbowDelimiterViolet",
+          "RainbowDelimiterCyan",
+        },
+      }
+    end,
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {},
+  },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
     },
-    cmd = {
-      "RainbowDelim",
-      "RainbowDelimSimple",
-      "RainbowDelimQuoted",
-      "RainbowMultiDelim",
-      "RainbowAlign",
+    opts = {
+      show_modified = true,
     },
   },
 }

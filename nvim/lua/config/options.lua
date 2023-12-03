@@ -5,6 +5,7 @@ local opt = vim.opt
 
 opt.conceallevel = 0
 opt.showtabline = 2
+opt.synmaxcol = 400
 -- NOTE: To use powershell, uncomment:
 -- WARNING: Some other plugin might be assuming cmd instead of pwsh
 -- TODO: Fix issue when running :!command (color codes are displayed)
