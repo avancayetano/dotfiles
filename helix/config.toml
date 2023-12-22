@@ -1,0 +1,45 @@
+theme = "mytheme"
+
+[editor]
+line-number = "relative"
+bufferline = "always"
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.lsp]
+display-messages = true
+
+[editor.indent-guides]
+render = true
+
+[editor.statusline]
+left = ["mode", "version-control", "file-name", "file-modification-indicator"]
+right = ["spinner", "file-line-ending","diagnostics", "selections", "position", "position-percentage"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal]
+x = ["goto_line_start", "select_mode", "goto_line_end_newline"]
+C-s = [":write"]
+esc = ["collapse_selection", "keep_primary_selection"]
+y = "yank_main_selection_to_clipboard"
+d = ["yank_main_selection_to_clipboard", "delete_selection"]
+p = "paste_clipboard_after"
+P = "paste_clipboard_before"
+H = "goto_previous_buffer"
+L = "goto_next_buffer"
+
+[keys.select]
+y = "yank_main_selection_to_clipboard"
+d = ["yank_main_selection_to_clipboard", "delete_selection"]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+H = "goto_previous_buffer"
+L = "goto_next_buffer"
+
+
+[keys.insert]
+C-s = ["normal_mode", ":write"]

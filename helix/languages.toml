@@ -1,0 +1,50 @@
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "tailwindcss-ls" ]
+formatter = { command = "prettier.cmd", args = ["--parser", "html", "--end-of-line", "auto"] }
+
+[[language]]
+name = "json"
+formatter = { command = "prettier.cmd", args = ["--parser", "json", "--end-of-line", "auto"] }
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+formatter = { command = "prettier.cmd", args = ["--parser", "css", "--end-of-line", "auto"] }
+
+[[language]]
+name = "javascript"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+formatter = { command = "prettier.cmd", args = ["--parser", "typescript", "--end-of-line", "auto"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+formatter = { command = "prettier.cmd", args = ["--parser", "typescript", "--end-of-line", "auto"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+formatter = { command = "prettier.cmd", args = ["--parser", "typescript", "--end-of-line", "auto"] }
+auto-format = true
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = [
+    {name = "pyright"},
+    {name = "ruff-lsp"},
+]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+config = {}
+
+[language-server.ruff-lsp]
+command = "ruff-lsp"
+args = []
+config = {}
