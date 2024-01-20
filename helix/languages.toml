@@ -48,3 +48,7 @@ config = {}
 command = "ruff-lsp"
 args = []
 config = {}
+onfig = {}
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
